@@ -1,0 +1,200 @@
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top_cs.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top_cs.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top_cs.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+bitgen -intstyle ise -f top.ut top.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top_cs.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top_cs.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top_cs.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+netgen -intstyle ise -insert_glbl true -w -dir netgen/synthesis -ofmt verilog -sim top.ngc top_synthesis.v 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top_cs.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top_cs.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top_cs.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top_cs.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top_cs.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top_cs.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top_cs.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 
+xst -intstyle ise -ifn "C:/FPGA/study/jitter_controller_new/imp/prj/top.xst" -ofn "C:/FPGA/study/jitter_controller_new/imp/prj/top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc src/ucf/jit_cont_ucf.ucf -p xc3s1200e-fg320-4 top_cs.ngc top.ngd  
+map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off -c 100 -o top_map.ncd top.ngd top.pcf 
+par -w -intstyle ise -ol high -t 1 top_map.ncd top.ncd top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml top.twx top.ncd -o top.twr top.pcf 
+bitgen -intstyle ise -f top.ut top.ncd 

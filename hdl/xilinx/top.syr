@@ -1,0 +1,1233 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc3s1200e-4-fg320
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 2
+Keep Hierarchy                     : Soft
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : Max_Delay
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "src/soc_tranciever/pulsator.v" in library work
+Compiling verilog file "src/soc_tranciever/counter.v" in library work
+Module <pulsator> compiled
+Compiling verilog file "src/eth/rmii_send_byte_50_MHz.v" in library work
+Module <counter> compiled
+Compiling verilog file "src/eth/rmii_recv_byte_50_MHz.v" in library work
+Module <rmii_send_byte_50_MHz> compiled
+Compiling verilog file "src/soc_tranciever/soc_pdo_recv.v" in library work
+Module <rmii_recv_byte_50_MHz> compiled
+Compiling verilog file "src/soc_tranciever/relative_time_det.v" in library work
+Module <soc_pdo_recv> compiled
+Compiling verilog file "src/soc_tranciever/powerlink_rhub_pdo_recv.v" in library work
+Module <relative_time_det> compiled
+Compiling verilog file "src/soc_tranciever/jitter_timer.v" in library work
+Module <powerlink_rhub_pdo_recv> compiled
+Compiling verilog file "src/mem/mem_2port.v" in library work
+Module <jitter_timer> compiled
+Compiling verilog file "src/eth/rmii_send_mem.v" in library work
+Module <mem_2port> compiled
+Compiling verilog file "src/eth/rmii_recv_mem.v" in library work
+Module <rmii_send_mem> compiled
+Compiling verilog file "src/soc_tranciever/retr_soc.v" in library work
+Module <rmii_recv_mem> compiled
+Compiling verilog file "src/soc_tranciever/jit_cont.v" in library work
+Module <retr_soc> compiled
+Compiling verilog file "src/soc_tranciever/top.v" in library work
+Module <jit_cont> compiled
+Module <top> compiled
+No errors in compilation
+Analysis of file <"top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <top> in library <work> with parameters.
+	COUNTER_WIDTH = "00000000000000000000000000100000"
+	max_jitter = "00000000000000000000000011111010"
+	neg_offset = "00000000000000000000000000000000"
+	pos_offset = "00000000000000000000000000000000"
+	soc_echo = "00000000000000000000000000000001"
+
+Analyzing hierarchy for module <jit_cont> in library <work> with parameters.
+	COUNTER_WIDTH = "00000000000000000000000000100000"
+	max_jitter = "00000000000000000000000011111010"
+	neg_offset = "00000000000000000000000000000000"
+	pos_offset = "00000000000000000000000000000000"
+	soc_echo = "00000000000000000000000000000001"
+
+Analyzing hierarchy for module <retr_soc> in library <work> with parameters.
+	COUNTER_WIDTH = "00000000000000000000000000100000"
+	frame_buff_wide = "00000000000000000000000000001010"
+	max_jitter = "00000000000000000000000000000000"
+	neg_offset = "00000000000000000000000000000000"
+	pos_offset = "00000000000000000000000000000000"
+	preamble_offset = "0000001000"
+	soc_echo = "00000000000000000000000000000000"
+	st_idle = "00000000000000000000000000000000"
+	st_trans = "00000000000000000000000000000001"
+
+Analyzing hierarchy for module <retr_soc> in library <work> with parameters.
+	COUNTER_WIDTH = "00000000000000000000000000100000"
+	frame_buff_wide = "00000000000000000000000000001010"
+	max_jitter = "00000000000000000000000011111010"
+	neg_offset = "00000000000000000000000000000000"
+	pos_offset = "00000000000000000000000000000000"
+	preamble_offset = "0000001000"
+	soc_echo = "00000000000000000000000000000001"
+	st_idle = "00000000000000000000000000000000"
+	st_trans = "00000000000000000000000000000001"
+
+Analyzing hierarchy for module <powerlink_rhub_pdo_recv> in library <work> with parameters.
+	last_head = "00000000000000000000000000011001"
+	master = "00000000000000000000000000000001"
+	st_idle = "00000000000000000000000000001000"
+
+Analyzing hierarchy for module <jitter_timer> in library <work> with parameters.
+	COUNTER_WIDTH = "00000000000000000000000000100000"
+	count = "00000000000000000000000000000010"
+	inititalyze_first = "00000000000000000000000000000000"
+	inititalyze_second = "00000000000000000000000000000001"
+	neg_offset = "00000000000000000000000000000000"
+	pos_offset = "00000000000000000000000000000000"
+
+Analyzing hierarchy for module <relative_time_det> in library <work> with parameters.
+	L = "00000000000000000000000000001010"
+	idle = "00000000000000000000000000000000"
+	recv_time = "00000000000000000000000000000010"
+	waiting_for_time = "00000000000000000000000000000001"
+
+Analyzing hierarchy for module <rmii_send_mem> in library <work> with parameters.
+	L = "00000000000000000000000000001010"
+	st_idle = "00"
+	st_read_byte = "01"
+	st_send = "10"
+	st_start_send = "11"
+
+Analyzing hierarchy for module <rmii_recv_mem> in library <work> with parameters.
+	L = "00000000000000000000000000001010"
+
+Analyzing hierarchy for module <soc_pdo_recv> in library <work> with parameters.
+	last_head = "00000000000000000000000000011001"
+	master = "00000000000000000000000000000000"
+	st_idle = "00000000000000000000000000001000"
+
+Analyzing hierarchy for module <mem_2port> in library <work> with parameters.
+	L = "00000000000000000000000000001010"
+	MaxM = "00000000000000000000010000000000"
+	N = "00000000000000000000000000001000"
+	do_clk_b = "00000000000000000000000000000000"
+
+Analyzing hierarchy for module <rmii_recv_byte_50_MHz> in library <work>.
+
+Analyzing hierarchy for module <counter> in library <work> with parameters.
+	wide = "00000000000000000000000000100000"
+
+Analyzing hierarchy for module <rmii_send_byte_50_MHz> in library <work>.
+
+Analyzing hierarchy for module <pulsator> in library <work> with parameters.
+	cnt_wide = "00000000000000000000000000000111"
+	count_to = "00000000000000000000000000110010"
+	last_neg_offset = "00000000000000000000000000000011"
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <top>.
+	COUNTER_WIDTH = 32'sb00000000000000000000000000100000
+	max_jitter = 32'b00000000000000000000000011111010
+	neg_offset = 32'sb00000000000000000000000000000000
+	pos_offset = 32'sb00000000000000000000000000000000
+	soc_echo = 32'sb00000000000000000000000000000001
+Module <top> is correct for synthesis.
+ 
+Analyzing module <jit_cont> in library <work>.
+	COUNTER_WIDTH = 32'sb00000000000000000000000000100000
+	max_jitter = 32'b00000000000000000000000011111010
+	neg_offset = 32'sb00000000000000000000000000000000
+	pos_offset = 32'sb00000000000000000000000000000000
+	soc_echo = 32'sb00000000000000000000000000000001
+Module <jit_cont> is correct for synthesis.
+ 
+Analyzing module <retr_soc.1> in library <work>.
+	COUNTER_WIDTH = 32'sb00000000000000000000000000100000
+	frame_buff_wide = 32'sb00000000000000000000000000001010
+	max_jitter = 32'sb00000000000000000000000000000000
+	neg_offset = 32'sb00000000000000000000000000000000
+	pos_offset = 32'sb00000000000000000000000000000000
+	preamble_offset = 10'b0000001000
+	soc_echo = 32'sb00000000000000000000000000000000
+	st_idle = 32'sb00000000000000000000000000000000
+	st_trans = 32'sb00000000000000000000000000000001
+WARNING:Xst:852 - "src/soc_tranciever/retr_soc.v" line 318: Unconnected input port 'clk_b' of instance 'frame_buf' is tied to GND.
+WARNING:Xst:852 - "src/soc_tranciever/retr_soc.v" line 338: Unconnected input port 'clk_b' of instance 'frame_buf2' is tied to GND.
+Module <retr_soc.1> is correct for synthesis.
+ 
+Analyzing module <powerlink_rhub_pdo_recv> in library <work>.
+	last_head = 32'sb00000000000000000000000000011001
+	master = 32'sb00000000000000000000000000000001
+	st_idle = 32'sb00000000000000000000000000001000
+Module <powerlink_rhub_pdo_recv> is correct for synthesis.
+ 
+Analyzing module <rmii_recv_byte_50_MHz> in library <work>.
+Module <rmii_recv_byte_50_MHz> is correct for synthesis.
+ 
+Analyzing module <jitter_timer> in library <work>.
+	COUNTER_WIDTH = 32'sb00000000000000000000000000100000
+	count = 32'sb00000000000000000000000000000010
+	inititalyze_first = 32'sb00000000000000000000000000000000
+	inititalyze_second = 32'sb00000000000000000000000000000001
+	neg_offset = 32'sb00000000000000000000000000000000
+	pos_offset = 32'sb00000000000000000000000000000000
+Module <jitter_timer> is correct for synthesis.
+ 
+Analyzing module <counter> in library <work>.
+	wide = 32'sb00000000000000000000000000100000
+Module <counter> is correct for synthesis.
+ 
+Analyzing module <pulsator> in library <work>.
+	cnt_wide = 32'sb00000000000000000000000000000111
+	count_to = 32'sb00000000000000000000000000110010
+	last_neg_offset = 32'sb00000000000000000000000000000011
+Module <pulsator> is correct for synthesis.
+ 
+Analyzing module <relative_time_det> in library <work>.
+	L = 32'sb00000000000000000000000000001010
+	idle = 32'sb00000000000000000000000000000000
+	recv_time = 32'sb00000000000000000000000000000010
+	waiting_for_time = 32'sb00000000000000000000000000000001
+Module <relative_time_det> is correct for synthesis.
+ 
+Analyzing module <rmii_send_mem> in library <work>.
+	L = 32'sb00000000000000000000000000001010
+	st_idle = 2'b00
+	st_read_byte = 2'b01
+	st_send = 2'b10
+	st_start_send = 2'b11
+Module <rmii_send_mem> is correct for synthesis.
+ 
+Analyzing module <rmii_send_byte_50_MHz> in library <work>.
+Module <rmii_send_byte_50_MHz> is correct for synthesis.
+ 
+Analyzing module <rmii_recv_mem> in library <work>.
+	L = 32'sb00000000000000000000000000001010
+Module <rmii_recv_mem> is correct for synthesis.
+ 
+Analyzing module <soc_pdo_recv> in library <work>.
+	last_head = 32'sb00000000000000000000000000011001
+	master = 32'sb00000000000000000000000000000000
+	st_idle = 32'sb00000000000000000000000000001000
+Module <soc_pdo_recv> is correct for synthesis.
+ 
+Analyzing module <mem_2port> in library <work>.
+	L = 32'sb00000000000000000000000000001010
+	MaxM = 32'sb00000000000000000000010000000000
+	N = 32'sb00000000000000000000000000001000
+	do_clk_b = 32'sb00000000000000000000000000000000
+INFO:Xst:2546 - "src/mem/mem_2port.v" line 73: reading initialization file "src/mem/mem.hex".
+Module <mem_2port> is correct for synthesis.
+ 
+    Set property "ram_style = block" for signal <mem>.
+Analyzing module <retr_soc.2> in library <work>.
+	COUNTER_WIDTH = 32'sb00000000000000000000000000100000
+	frame_buff_wide = 32'sb00000000000000000000000000001010
+	max_jitter = 32'b00000000000000000000000011111010
+	neg_offset = 32'sb00000000000000000000000000000000
+	pos_offset = 32'sb00000000000000000000000000000000
+	preamble_offset = 10'b0000001000
+	soc_echo = 32'sb00000000000000000000000000000001
+	st_idle = 32'sb00000000000000000000000000000000
+	st_trans = 32'sb00000000000000000000000000000001
+WARNING:Xst:852 - "src/soc_tranciever/retr_soc.v" line 318: Unconnected input port 'clk_b' of instance 'frame_buf' is tied to GND.
+WARNING:Xst:852 - "src/soc_tranciever/retr_soc.v" line 338: Unconnected input port 'clk_b' of instance 'frame_buf2' is tied to GND.
+Module <retr_soc.2> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <relative_time_det>.
+    Related source file is "src/soc_tranciever/relative_time_det.v".
+    Found 64-bit register for signal <relative_time>.
+    Found 1-bit register for signal <relative_time_valid>.
+    Found 2-bit register for signal <state>.
+    Summary:
+	inferred  67 D-type flip-flop(s).
+Unit <relative_time_det> synthesized.
+
+
+Synthesizing Unit <mem_2port>.
+    Related source file is "src/mem/mem_2port.v".
+WARNING:Xst:647 - Input <clk_b> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1872 - Variable <i> is used but never assigned.
+    Found 1024x8-bit dual-port RAM <Mram_mem> for signal <mem>.
+    Found 8-bit register for signal <r_data_a>.
+    Found 8-bit register for signal <r_data_b>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred  16 D-type flip-flop(s).
+Unit <mem_2port> synthesized.
+
+
+Synthesizing Unit <rmii_recv_byte_50_MHz>.
+    Related source file is "src/eth/rmii_recv_byte_50_MHz.v".
+    Found finite state machine <FSM_0> for signal <stop>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 16                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | stop$not0000              (positive)           |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <busy>.
+    Found 1-bit register for signal <rdy>.
+    Found 8-bit register for signal <data>.
+    Found 8-bit register for signal <rx_data>.
+    Found 1-bit register for signal <s_rm_crs_dv>.
+    Found 2-bit register for signal <s_rm_rx_data>.
+    Found 5-bit down counter for signal <wait_cnt>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   1 Counter(s).
+	inferred  21 D-type flip-flop(s).
+Unit <rmii_recv_byte_50_MHz> synthesized.
+
+
+Synthesizing Unit <pulsator>.
+    Related source file is "src/soc_tranciever/pulsator.v".
+    Found 1-bit register for signal <pulse>.
+    Found 7-bit register for signal <cnt>.
+    Found 7-bit adder for signal <cnt$share0000>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <pulsator> synthesized.
+
+
+Synthesizing Unit <rmii_send_byte_50_MHz>.
+    Related source file is "src/eth/rmii_send_byte_50_MHz.v".
+    Found 1-bit register for signal <rm_tx_en>.
+    Found 2-bit register for signal <rm_tx_data>.
+    Found 1-bit register for signal <rdy>.
+    Found 2-bit up counter for signal <bit_cnt>.
+    Found 6-bit register for signal <tx_data>.
+    Found 5-bit down counter for signal <wait_cnt>.
+    Found 2-bit comparator equal for signal <wait_cnt$cmp_eq0001> created at line 56.
+    Found 2-bit comparator not equal for signal <wait_cnt$cmp_ne0000> created at line 56.
+    Summary:
+	inferred   2 Counter(s).
+	inferred  10 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+Unit <rmii_send_byte_50_MHz> synthesized.
+
+
+Synthesizing Unit <powerlink_rhub_pdo_recv>.
+    Related source file is "src/soc_tranciever/powerlink_rhub_pdo_recv.v".
+WARNING:Xst:647 - Input <node> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <pdo_st>.
+    Found 9-bit register for signal <cmp_data>.
+    Found 1-bit register for signal <fault>.
+    Found 8-bit comparator equal for signal <fault$cmp_eq0000> created at line 118.
+    Found 1-bit register for signal <head>.
+    Found 12-bit register for signal <state_m>.
+    Found 12-bit adder for signal <state_m$addsub0000> created at line 117.
+    Summary:
+	inferred   3 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <powerlink_rhub_pdo_recv> synthesized.
+
+
+Synthesizing Unit <rmii_send_mem>.
+    Related source file is "src/eth/rmii_send_mem.v".
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 2                                              |
+    | Transitions        | 4                                              |
+    | Inputs             | 2                                              |
+    | Outputs            | 3                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | send_rdy                  (positive)           |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 10-bit register for signal <addr>.
+    Found 1-bit register for signal <done>.
+    Found 1-bit register for signal <rdy>.
+    Found 10-bit adder for signal <addr$addsub0000> created at line 93.
+    Found 10-bit register for signal <addr_lim>.
+    Found 10-bit adder for signal <addr_lim$share0000> created at line 70.
+    Found 8-bit register for signal <send_buf>.
+    Found 1-bit register for signal <send_byte_start>.
+    Found 10-bit comparator not equal for signal <send_byte_start$cmp_ne0000> created at line 102.
+    Found 10-bit comparator equal for signal <state$cmp_eq0000> created at line 86.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  31 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <rmii_send_mem> synthesized.
+
+
+Synthesizing Unit <rmii_recv_mem>.
+    Related source file is "src/eth/rmii_recv_mem.v".
+    Found 10-bit up counter for signal <addr>.
+    Found 10-bit register for signal <count>.
+    Found 1-bit register for signal <we>.
+    Found 8-bit register for signal <wdata>.
+    Found 1-bit register for signal <rdy>.
+    Found 10-bit subtractor for signal <addr$sub0000> created at line 71.
+    Found 10-bit up counter for signal <recv_cnt>.
+    Found 1-bit register for signal <s_busy>.
+    Summary:
+	inferred   2 Counter(s).
+	inferred  21 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <rmii_recv_mem> synthesized.
+
+
+Synthesizing Unit <soc_pdo_recv>.
+    Related source file is "src/soc_tranciever/soc_pdo_recv.v".
+    Found 1-bit register for signal <head_o>.
+    Found 1-bit register for signal <soc>.
+    Found 9-bit register for signal <cmp_data>.
+    Found 1-bit register for signal <fault>.
+    Found 8-bit comparator equal for signal <fault$cmp_eq0000> created at line 88.
+    Found 1-bit register for signal <head>.
+    Found 12-bit register for signal <state_m>.
+    Found 12-bit adder for signal <state_m$addsub0000> created at line 87.
+    Summary:
+	inferred   4 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <soc_pdo_recv> synthesized.
+
+
+Synthesizing Unit <counter>.
+    Related source file is "src/soc_tranciever/counter.v".
+    Found 1-bit register for signal <count_done>.
+    Found 32-bit up counter for signal <cnt>.
+    Found 32-bit comparator equal for signal <cnt$cmp_eq0000> created at line 67.
+    Found 1-bit register for signal <cnt_en>.
+    Found 32-bit comparator not equal for signal <cnt_en$cmp_ne0000> created at line 67.
+    Found 32-bit register for signal <count_to>.
+    Found 32-bit register for signal <count_to_minus_one>.
+    Found 32-bit subtractor for signal <count_to_minus_one$sub0000> created at line 44.
+    Found 1-bit register for signal <last>.
+    Found 32-bit comparator not equal for signal <last$cmp_ne0000> created at line 76.
+    Summary:
+	inferred   1 Counter(s).
+	inferred  67 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   3 Comparator(s).
+Unit <counter> synthesized.
+
+
+Synthesizing Unit <jitter_timer>.
+    Related source file is "src/soc_tranciever/jitter_timer.v".
+    Found 1-bit register for signal <time_to_soc>.
+    Found 32-bit adder for signal <$add0000> created at line 267.
+    Found 32-bit register for signal <cnt>.
+    Found 64-bit register for signal <cycle_time>.
+    Found 64-bit subtractor for signal <cycle_time$sub0000> created at line 209.
+    Found 64-bit register for signal <cycle_time_prev>.
+    Found 1-bit register for signal <preq_prev>.
+    Found 1-bit register for signal <preq_was>.
+    Found 1-bit register for signal <rst_cnt>.
+    Found 1-bit register for signal <start_cnt>.
+    Found 2-bit register for signal <state>.
+    Found 64-bit comparator equal for signal <state$cmp_eq0004> created at line 139.
+    Found 64-bit comparator not equal for signal <state$cmp_ne0001> created at line 193.
+    Found 64-bit register for signal <time_now>.
+    Found 32-bit down counter for signal <time_out_counter>.
+    Found 64-bit register for signal <time_prev>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred 295 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   2 Comparator(s).
+Unit <jitter_timer> synthesized.
+
+
+Synthesizing Unit <retr_soc_1>.
+    Related source file is "src/soc_tranciever/retr_soc.v".
+WARNING:Xst:646 - Signal <r_data_a2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r_data_a> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <head_done_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <count_buf_2<31:10>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <count_buf_1<31:10>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_2> for signal <retr_state>.
+    -----------------------------------------------------------------------
+    | States             | 2                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <soc_out_edge>.
+    Found 1-bit register for signal <soc_edge>.
+    Found 2-bit register for signal <buffer_is_full>.
+    Found 2-bit register for signal <buffer_not_empty>.
+    Found 1-bit register for signal <comutate_in_1>.
+    Found 1-bit register for signal <comutate_out_1>.
+    Found 32-bit register for signal <count_buf_1>.
+    Found 32-bit register for signal <count_buf_2>.
+    Found 2-bit register for signal <soc_in_buffer>.
+    Found 10-bit register for signal <trans_count_dev>.
+    Found 10-bit adder for signal <trans_count_dev$addsub0000>.
+    Found 1-bit register for signal <trans_start_dev>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  85 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <retr_soc_1> synthesized.
+
+
+Synthesizing Unit <retr_soc_2>.
+    Related source file is "src/soc_tranciever/retr_soc.v".
+WARNING:Xst:646 - Signal <r_data_a2> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <r_data_a> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <head_done_out> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <count_buf_2<31:10>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <count_buf_1<31:10>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_3> for signal <retr_state>.
+    -----------------------------------------------------------------------
+    | States             | 2                                              |
+    | Transitions        | 5                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 2                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Reset              | rst                       (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | 00                                             |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <soc_out_edge>.
+    Found 1-bit register for signal <soc_edge>.
+    Found 2-bit register for signal <buffer_is_full>.
+    Found 2-bit register for signal <buffer_not_empty>.
+    Found 1-bit register for signal <comutate_in_1>.
+    Found 1-bit register for signal <comutate_out_1>.
+    Found 32-bit register for signal <count_buf_1>.
+    Found 32-bit register for signal <count_buf_2>.
+    Found 2-bit register for signal <soc_in_buffer>.
+    Found 10-bit register for signal <trans_count_dev>.
+    Found 10-bit adder for signal <trans_count_dev$addsub0000>.
+    Found 1-bit register for signal <trans_start_dev>.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  85 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <retr_soc_2> synthesized.
+
+
+Synthesizing Unit <jit_cont>.
+    Related source file is "src/soc_tranciever/jit_cont.v".
+    Found 1-bit register for signal <rm_tx_en_sl>.
+    Found 1-bit register for signal <rm_tx_en_mst>.
+    Found 2-bit register for signal <rm_tx_data_sl>.
+    Found 2-bit register for signal <rm_tx_data_mst>.
+    Summary:
+	inferred   6 D-type flip-flop(s).
+Unit <jit_cont> synthesized.
+
+
+Synthesizing Unit <top>.
+    Related source file is "src/soc_tranciever/top.v".
+Unit <top> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 4
+ 1024x8-bit dual-port RAM                              : 4
+# Adders/Subtractors                                   : 26
+ 10-bit adder                                          : 6
+ 10-bit subtractor                                     : 2
+ 12-bit adder                                          : 6
+ 32-bit adder                                          : 2
+ 32-bit subtractor                                     : 4
+ 64-bit subtractor                                     : 2
+ 7-bit adder                                           : 4
+# Counters                                             : 22
+ 10-bit up counter                                     : 4
+ 2-bit up counter                                      : 2
+ 32-bit down counter                                   : 2
+ 32-bit up counter                                     : 4
+ 5-bit down counter                                    : 10
+# Registers                                            : 208
+ 1-bit register                                        : 114
+ 10-bit register                                       : 8
+ 12-bit register                                       : 6
+ 2-bit register                                        : 16
+ 32-bit register                                       : 14
+ 6-bit register                                        : 2
+ 64-bit register                                       : 10
+ 7-bit register                                        : 4
+ 8-bit register                                        : 28
+ 9-bit register                                        : 6
+# Comparators                                          : 30
+ 10-bit comparator equal                               : 2
+ 10-bit comparator not equal                           : 2
+ 2-bit comparator equal                                : 2
+ 2-bit comparator not equal                            : 2
+ 32-bit comparator equal                               : 4
+ 32-bit comparator not equal                           : 8
+ 64-bit comparator equal                               : 2
+ 64-bit comparator not equal                           : 2
+ 8-bit comparator equal                                : 6
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_3> for best encoding.
+Optimizing FSM <jit_cont/mst_to_sl/retr_state/FSM> on signal <retr_state[1:1]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 0
+ 01    | 1
+-------------------
+Analyzing FSM <FSM_2> for best encoding.
+Optimizing FSM <jit_cont/sl_to_mst/retr_state/FSM> on signal <retr_state[1:1]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 0
+ 01    | 1
+-------------------
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <jit_cont/sl_to_mst/transmitter/state/FSM> on signal <state[1:1]> with sequential encoding.
+Optimizing FSM <jit_cont/mst_to_sl/transmitter/state/FSM> on signal <state[1:1]> with sequential encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 0
+ 10    | 1
+-------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <jit_cont/sl_to_mst/Label1/rmii_recv_byte/stop/FSM> on signal <stop[1:2]> with user encoding.
+Optimizing FSM <jit_cont/mst_to_sl/Label1/rmii_recv_byte/stop/FSM> on signal <stop[1:2]> with user encoding.
+Optimizing FSM <jit_cont/sl_to_mst/reciever/rmii_recv_byte/stop/FSM> on signal <stop[1:2]> with user encoding.
+Optimizing FSM <jit_cont/mst_to_sl/reciever/rmii_recv_byte/stop/FSM> on signal <stop[1:2]> with user encoding.
+Optimizing FSM <jit_cont/sl_to_mst/soc_detect_in/Label1/stop/FSM> on signal <stop[1:2]> with user encoding.
+Optimizing FSM <jit_cont/sl_to_mst/soc_detect_out/Label1/stop/FSM> on signal <stop[1:2]> with user encoding.
+Optimizing FSM <jit_cont/mst_to_sl/soc_detect_in/Label1/stop/FSM> on signal <stop[1:2]> with user encoding.
+Optimizing FSM <jit_cont/mst_to_sl/soc_detect_out/Label1/stop/FSM> on signal <stop[1:2]> with user encoding.
+-------------------
+ State | Encoding
+-------------------
+ 00    | 00
+ 10    | 10
+ 01    | 01
+-------------------
+WARNING:Xst:1290 - Hierarchical block <soc_detect_out> is unconnected in block <sl_to_mst>.
+   It will be removed from the design.
+WARNING:Xst:1710 - FF/Latch <6> (without init value) has a constant value of 0 in block <cmp_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <cmp_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <2> (without init value) has a constant value of 0 in block <cmp_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <6> (without init value) has a constant value of 0 in block <cmp_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <cmp_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <2> (without init value) has a constant value of 0 in block <cmp_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <state_0> (without init value) has a constant value of 0 in block <jitter_timer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <6> (without init value) has a constant value of 0 in block <cmp_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <cmp_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <2> (without init value) has a constant value of 0 in block <cmp_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <6> (without init value) has a constant value of 0 in block <cmp_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <cmp_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <2> (without init value) has a constant value of 0 in block <cmp_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <state_0> (without init value) has a constant value of 0 in block <jitter_timer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <6> (without init value) has a constant value of 0 in block <cmp_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <4> (without init value) has a constant value of 0 in block <cmp_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <2> (without init value) has a constant value of 0 in block <cmp_data>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <count_buf_1_10> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_11> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_12> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_13> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_14> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_15> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_16> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_17> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_18> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_19> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_20> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_21> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_22> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_23> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_24> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_25> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_26> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_27> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_28> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_29> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_30> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_31> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_10> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_11> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_12> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_13> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_14> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_15> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_16> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_17> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_18> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_19> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_20> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_21> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_22> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_23> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_24> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_25> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_26> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_27> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_28> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_29> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_30> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_2_31> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <count_buf_1_10> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_11> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_12> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_13> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_14> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_15> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_16> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_17> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_18> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_19> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_20> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_21> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_22> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_23> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_24> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_25> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_26> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_27> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_28> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_29> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_30> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_1_31> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_10> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_11> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_12> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_13> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_14> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_15> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_16> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_17> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_18> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_19> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_20> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_21> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_22> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_23> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_24> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_25> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_26> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_27> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_28> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_29> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_30> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2677 - Node <count_buf_2_31> of sequential type is unconnected in block <mst_to_sl>.
+WARNING:Xst:2404 -  FFs/Latches <count_buf_1<31:10>> (without init value) have a constant value of 0 in block <retr_soc_1>.
+WARNING:Xst:2404 -  FFs/Latches <count_buf_2<31:10>> (without init value) have a constant value of 0 in block <retr_soc_1>.
+WARNING:Xst:2404 -  FFs/Latches <count_buf_1<31:10>> (without init value) have a constant value of 0 in block <retr_soc_2>.
+WARNING:Xst:2404 -  FFs/Latches <count_buf_2<31:10>> (without init value) have a constant value of 0 in block <retr_soc_2>.
+
+Synthesizing (advanced) Unit <mem_2port>.
+INFO:Xst:3226 - The RAM <Mram_mem> will be implemented as a BLOCK RAM, absorbing the following register(s): <r_data_a> <r_data_b>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 1024-word x 8-bit                   |          |
+    |     mode           | read-first                          |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     enA            | connected to signal <en_a>          | high     |
+    |     weA            | connected to signal <we_a>          | high     |
+    |     addrA          | connected to signal <addr_a>        |          |
+    |     diA            | connected to signal <w_data_a>      |          |
+    |     doA            | connected to signal <r_data_a>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 1024-word x 8-bit                   |          |
+    |     mode           | read-first                          |          |
+    |     clkB           | connected to signal <clk>           | rise     |
+    |     enB            | connected to signal <en_b>          | high     |
+    |     weB            | connected to signal <we_b>          | high     |
+    |     addrB          | connected to signal <addr_b>        |          |
+    |     diB            | connected to signal <w_data_b>      |          |
+    |     doB            | connected to signal <r_data_b>      |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <mem_2port> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 4
+# RAMs                                                 : 4
+ 1024x8-bit dual-port block RAM                        : 4
+# Adders/Subtractors                                   : 26
+ 10-bit adder                                          : 6
+ 10-bit subtractor                                     : 2
+ 12-bit adder                                          : 6
+ 32-bit adder                                          : 2
+ 32-bit subtractor                                     : 4
+ 64-bit subtractor                                     : 2
+ 7-bit adder                                           : 4
+# Counters                                             : 22
+ 10-bit up counter                                     : 4
+ 2-bit up counter                                      : 2
+ 32-bit down counter                                   : 2
+ 32-bit up counter                                     : 4
+ 5-bit down counter                                    : 10
+# Registers                                            : 1552
+ Flip-Flops                                            : 1552
+# Comparators                                          : 30
+ 10-bit comparator equal                               : 2
+ 10-bit comparator not equal                           : 2
+ 2-bit comparator equal                                : 2
+ 2-bit comparator not equal                            : 2
+ 32-bit comparator equal                               : 4
+ 32-bit comparator not equal                           : 8
+ 64-bit comparator equal                               : 2
+ 64-bit comparator not equal                           : 2
+ 8-bit comparator equal                                : 6
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <state_0> (without init value) has a constant value of 0 in block <jitter_timer>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cmp_data_6> (without init value) has a constant value of 0 in block <powerlink_rhub_pdo_recv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cmp_data_4> (without init value) has a constant value of 0 in block <powerlink_rhub_pdo_recv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cmp_data_2> (without init value) has a constant value of 0 in block <powerlink_rhub_pdo_recv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <cmp_data_6> (without init value) has a constant value of 0 in block <soc_pdo_recv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cmp_data_4> (without init value) has a constant value of 0 in block <soc_pdo_recv>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <cmp_data_2> (without init value) has a constant value of 0 in block <soc_pdo_recv>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <cmp_data_7> in Unit <powerlink_rhub_pdo_recv> is equivalent to the following FF/Latch, which will be removed : <cmp_data_3> 
+INFO:Xst:2261 - The FF/Latch <cmp_data_1> in Unit <powerlink_rhub_pdo_recv> is equivalent to the following FF/Latch, which will be removed : <cmp_data_0> 
+INFO:Xst:2261 - The FF/Latch <cmp_data_7> in Unit <soc_pdo_recv> is equivalent to the following FF/Latch, which will be removed : <cmp_data_3> 
+INFO:Xst:2261 - The FF/Latch <cmp_data_5> in Unit <soc_pdo_recv> is equivalent to the following FF/Latch, which will be removed : <cmp_data_1> 
+
+Optimizing unit <top> ...
+
+Optimizing unit <relative_time_det> ...
+
+Optimizing unit <mem_2port> ...
+
+Optimizing unit <rmii_recv_byte_50_MHz> ...
+WARNING:Xst:1710 - FF/Latch <wait_cnt_4> (without init value) has a constant value of 0 in block <rmii_recv_byte_50_MHz>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <wait_cnt_4> (without init value) has a constant value of 0 in block <rmii_recv_byte_50_MHz>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <pulsator> ...
+
+Optimizing unit <rmii_send_byte_50_MHz> ...
+WARNING:Xst:1710 - FF/Latch <wait_cnt_4> (without init value) has a constant value of 0 in block <rmii_send_byte_50_MHz>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <wait_cnt_4> (without init value) has a constant value of 0 in block <rmii_send_byte_50_MHz>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <powerlink_rhub_pdo_recv> ...
+
+Optimizing unit <rmii_send_mem> ...
+
+Optimizing unit <rmii_recv_mem> ...
+
+Optimizing unit <soc_pdo_recv> ...
+
+Optimizing unit <counter> ...
+
+Optimizing unit <jitter_timer> ...
+
+Optimizing unit <retr_soc_1> ...
+
+Optimizing unit <retr_soc_2> ...
+
+Optimizing unit <jit_cont> ...
+WARNING:Xst:1710 - FF/Latch <stop_FSM_FFd2> (without init value) has a constant value of 0 in block <rmii_recv_byte>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <stop_FSM_FFd2> (without init value) has a constant value of 0 in block <rmii_recv_byte>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <stop_FSM_FFd2> (without init value) has a constant value of 0 in block <Label1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <stop_FSM_FFd2> (without init value) has a constant value of 0 in block <rmii_recv_byte>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <stop_FSM_FFd2> (without init value) has a constant value of 0 in block <rmii_recv_byte>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <stop_FSM_FFd2> (without init value) has a constant value of 0 in block <Label1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <stop_FSM_FFd2> (without init value) has a constant value of 0 in block <Label1>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <soc_edge> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:2677 - Node <soc_out_edge> of sequential type is unconnected in block <sl_to_mst>.
+WARNING:Xst:1290 - Hierarchical block <soc_detect_out> is unconnected in block <sl_to_mst>.
+   It will be removed from the design.
+WARNING:Xst:2677 - Node <head_o> of sequential type is unconnected in block <soc_detect_out>.
+WARNING:Xst:2677 - Node <stop_FSM_FFd1> of sequential type is unconnected in block <rmii_recv_byte>.
+WARNING:Xst:2677 - Node <stop_FSM_FFd1> of sequential type is unconnected in block <rmii_recv_byte>.
+WARNING:Xst:2677 - Node <stop_FSM_FFd1> of sequential type is unconnected in block <Label1>.
+WARNING:Xst:2677 - Node <stop_FSM_FFd1> of sequential type is unconnected in block <rmii_recv_byte>.
+WARNING:Xst:2677 - Node <stop_FSM_FFd1> of sequential type is unconnected in block <rmii_recv_byte>.
+WARNING:Xst:2677 - Node <stop_FSM_FFd1> of sequential type is unconnected in block <Label1>.
+WARNING:Xst:2677 - Node <stop_FSM_FFd1> of sequential type is unconnected in block <Label1>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 16.
+FlipFlop jit_cont/mst_to_sl/jitter_timer/state_1 has been replicated 1 time(s)
+FlipFlop jit_cont/sl_to_mst/jitter_timer/state_1 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 1754
+ Flip-Flops                                            : 1754
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : Soft
+
+Design Statistics
+# IOs                              : 20
+
+Cell Usage :
+# BELS                             : 3626
+#      GND                         : 21
+#      INV                         : 224
+#      LUT1                        : 95
+#      LUT2                        : 500
+#      LUT2_D                      : 18
+#      LUT3                        : 398
+#      LUT3_D                      : 8
+#      LUT3_L                      : 4
+#      LUT4                        : 732
+#      LUT4_D                      : 24
+#      LUT4_L                      : 36
+#      MUXCY                       : 859
+#      MUXF5                       : 38
+#      VCC                         : 17
+#      XORCY                       : 652
+# FlipFlops/Latches                : 1754
+#      FDC                         : 564
+#      FDCE                        : 1172
+#      FDP                         : 5
+#      FDPE                        : 13
+# RAMS                             : 4
+#      RAMB16_S9_S9                : 4
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 19
+#      IBUF                        : 7
+#      OBUF                        : 12
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1200efg320-4 
+
+ Number of Slices:                     1424  out of   8672    16%  
+ Number of Slice Flip Flops:           1754  out of  17344    10%  
+ Number of 4 input LUTs:               2039  out of  17344    11%  
+ Number of IOs:                          20
+ Number of bonded IOBs:                  20  out of    250     8%  
+ Number of BRAMs:                         4  out of     28    14%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk_50                             | BUFGP                  | 1758  |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------------------------------------------------------+----------------------------------------------------+-------+
+Control Signal                                                                     | Buffer(FF name)                                    | Load  |
+-----------------------------------------------------------------------------------+----------------------------------------------------+-------+
+rst                                                                                | IBUF                                               | 1326  |
+jit_cont/mst_to_sl/jitter_timer/_or0000(jit_cont/mst_to_sl/jitter_timer/_or00001:O)| NONE(jit_cont/mst_to_sl/jitter_timer/counter/cnt_0)| 214   |
+jit_cont/sl_to_mst/jitter_timer/_or0000(jit_cont/sl_to_mst/jitter_timer/_or00001:O)| NONE(jit_cont/sl_to_mst/jitter_timer/counter/cnt_0)| 214   |
+-----------------------------------------------------------------------------------+----------------------------------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 7.882ns (Maximum Frequency: 126.871MHz)
+   Minimum input arrival time before clock: 2.057ns
+   Maximum output required time after clock: 5.127ns
+   Maximum combinational path delay: 7.290ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_50'
+  Clock period: 7.882ns (frequency: 126.871MHz)
+  Total number of paths / destination ports: 51868 / 3041
+-------------------------------------------------------------------------
+Delay:               7.882ns (Levels of Logic = 7)
+  Source:            jit_cont/sl_to_mst/reciever/addr_4 (FF)
+  Destination:       jit_cont/sl_to_mst/time_det/relative_time_0 (FF)
+  Source Clock:      clk_50 rising
+  Destination Clock: clk_50 rising
+
+  Data Path: jit_cont/sl_to_mst/reciever/addr_4 to jit_cont/sl_to_mst/time_det/relative_time_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             4   0.591   0.762  addr_4 (addr_4)
+     end scope: 'reciever'
+     begin scope: 'time_det'
+     LUT3_L:I0->LO         1   0.704   0.104  state_and00001_SW0 (N9)
+     LUT4:I3->O            2   0.704   0.451  state_and00001 (N6)
+     LUT4:I3->O            7   0.704   0.787  state_and0000 (state_and0000)
+     LUT4:I1->O            1   0.704   0.000  relative_time_mux0000<0>1_G (N32)
+     MUXF5:I1->O          16   0.321   1.038  relative_time_mux0000<0>1 (N01)
+     LUT4:I3->O            1   0.704   0.000  relative_time_mux0000<23>1 (relative_time_mux0000<23>)
+     FDC:D                     0.308          relative_time_23
+    ----------------------------------------
+    Total                      7.882ns (4.740ns logic, 3.142ns route)
+                                       (60.1% logic, 39.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_50'
+  Total number of paths / destination ports: 18 / 18
+-------------------------------------------------------------------------
+Offset:              2.057ns (Levels of Logic = 3)
+  Source:            rm_crs_dv_sl (PAD)
+  Destination:       jit_cont/sl_to_mst/Label1/rmii_recv_byte/s_rm_crs_dv (FF)
+  Destination Clock: clk_50 rising
+
+  Data Path: rm_crs_dv_sl to jit_cont/sl_to_mst/Label1/rmii_recv_byte/s_rm_crs_dv
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             3   1.218   0.531  rm_crs_dv_sl_IBUF (rm_crs_dv_sl_IBUF)
+     begin scope: 'jit_cont'
+     begin scope: 'sl_to_mst'
+     begin scope: 'Label1'
+     begin scope: 'rmii_recv_byte'
+     FDC:D                     0.308          s_rm_crs_dv
+    ----------------------------------------
+    Total                      2.057ns (1.526ns logic, 0.531ns route)
+                                       (74.2% logic, 25.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_50'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              5.127ns (Levels of Logic = 3)
+  Source:            jit_cont/mst_to_sl/jitter_timer/state_1 (FF)
+  Destination:       rled (PAD)
+  Source Clock:      clk_50 rising
+
+  Data Path: jit_cont/mst_to_sl/jitter_timer/state_1 to rled
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q             37   0.591   1.264  state_1 (state_1)
+     end scope: 'jitter_timer'
+     end scope: 'mst_to_sl'
+     end scope: 'jit_cont'
+     OBUF:I->O                 3.272          rled_OBUF (rled)
+    ----------------------------------------
+    Total                      5.127ns (3.863ns logic, 1.264ns route)
+                                       (75.3% logic, 24.7% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 2 / 2
+-------------------------------------------------------------------------
+Delay:               7.290ns (Levels of Logic = 4)
+  Source:            clk_50 (PAD)
+  Destination:       rm_clk_mst (PAD)
+
+  Data Path: clk_50 to rm_clk_mst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     BUFGP:I->O         1763   1.457   1.410  clk_50_BUFGP (clk_50_BUFGP)
+     begin scope: 'jit_cont'
+     INV:I->O              2   0.704   0.447  rm_clk_sl1_INV_0 (rm_clk_sl)
+     end scope: 'jit_cont'
+     OBUF:I->O                 3.272          rm_clk_sl_OBUF (rm_clk_sl)
+    ----------------------------------------
+    Total                      7.290ns (5.433ns logic, 1.857ns route)
+                                       (74.5% logic, 25.5% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 23.00 secs
+Total CPU time to Xst completion: 23.15 secs
+ 
+--> 
+
+Total memory usage is 309524 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  158 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+

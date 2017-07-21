@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\FPGA\study\jitter_controller_new\imp\prj\top.ncd
+OUTFILE=C:\FPGA\study\jitter_controller_new\imp\prj\top.bit
+FAMILY=Spartan3E
+PART=xc3s1200e-4fg320
+WORKINGDIR=C:\FPGA\study\jitter_controller_new\imp\prj
+LICENSE=ISE
+USER_INFO=No user information available.

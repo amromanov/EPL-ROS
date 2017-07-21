@@ -1,0 +1,26 @@
+NET clk_50 				LOC = "B8";
+Net clk_50 TNM_NET = "sys_clk_pin";
+TIMESPEC "TS_sysclk" = PERIOD "sys_clk_pin" 10 ns HIGH 50%;
+NET rst			LOC = "B18";
+
+NET rm_tx_en_mst	LOC =	"C5";
+NET rm_tx_data_mst[0]	LOC =	"F7";
+NET rm_tx_data_mst[1]	LOC =	"E7";
+NET rm_crs_dv_mst	LOC =	"C4";
+NET rm_rx_data_mst[0]	LOC =	"B6";
+NET rm_rx_data_mst[1]	LOC =	"D5";
+		
+NET rm_clk_mst	LOC = "C3"; 
+NET rm_clk_sl	LOC = "T18";
+#NET rm_clk_2	LOC = "J15";
+		
+NET rm_tx_en_sl		LOC = "P17";
+NET rm_tx_data_sl[0]	LOC = "M13";
+NET rm_tx_data_sl[1]	LOC = "G15";
+NET rm_crs_dv_sl		LOC = "R15";
+NET rm_rx_data_sl[0]	LOC = "R16";
+NET rm_rx_data_sl[1]	LOC = "R18";//ѕлюс белый с синим
+		
+NET soc_in				LOC = "L15";
+NET soc_out				LOC = "K12";
+NET rled				LOC = "L17";

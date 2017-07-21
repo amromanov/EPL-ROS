@@ -1,0 +1,448 @@
+Release 14.7 Map P.20131013 (nt64)
+Xilinx Mapping Report File for Design 'top'
+
+Design Information
+------------------
+Command Line   : map -intstyle ise -p xc3s1200e-fg320-4 -cm area -ir off -pr off
+-c 100 -o top_map.ncd top.ngd top.pcf 
+Target Device  : xc3s1200e
+Target Package : fg320
+Target Speed   : -4
+Mapper Version : spartan3e -- $Revision: 1.55 $
+Mapped Date    : Fri May 05 20:22:07 2017
+
+Design Summary
+--------------
+Number of errors:      0
+Number of warnings:    1
+Logic Utilization:
+  Total Number Slice Registers:       1,978 out of  17,344   11%
+    Number used as Flip Flops:        1,977
+    Number used as Latches:               1
+  Number of 4 input LUTs:             2,065 out of  17,344   11%
+Logic Distribution:
+  Number of occupied Slices:          1,618 out of   8,672   18%
+    Number of Slices containing only related logic:   1,618 out of   1,618 100%
+    Number of Slices containing unrelated logic:          0 out of   1,618   0%
+      *See NOTES below for an explanation of the effects of unrelated logic.
+  Total Number of 4 input LUTs:       2,276 out of  17,344   13%
+    Number used as logic:             1,993
+    Number used as a route-thru:        211
+    Number used as Shift registers:      72
+
+  The Slice Logic Distribution report is not meaningful if the design is
+  over-mapped for a non-slice resource or if Placement fails.
+
+  Number of bonded IOBs:                 20 out of     250    8%
+  Number of RAMB16s:                      5 out of      28   17%
+  Number of BUFGMUXs:                     2 out of      24    8%
+  Number of BSCANs:                       1 out of       1  100%
+
+  Number of RPM macros:           12
+Average Fanout of Non-Clock Nets:                3.32
+
+Peak Memory Usage:  306 MB
+Total REAL time to MAP completion:  6 secs 
+Total CPU time to MAP completion:   6 secs 
+
+NOTES:
+
+   Related logic is defined as being logic that shares connectivity - e.g. two
+   LUTs are "related" if they share common inputs.  When assembling slices,
+   Map gives priority to combine logic that is related.  Doing so results in
+   the best timing performance.
+
+   Unrelated logic shares no connectivity.  Map will only begin packing
+   unrelated logic into a slice once 99% of the slices are occupied through
+   related logic packing.
+
+   Note that once logic distribution reaches the 99% level through related
+   logic packing, this does not mean the device is completely utilized.
+   Unrelated logic packing will then begin, continuing until all usable LUTs
+   and FFs are occupied.  Depending on your timing budget, increased levels of
+   unrelated logic packing may adversely affect the overall timing performance
+   of your design.
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Informational
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - IOB Properties
+Section 7 - RPMs
+Section 8 - Guide Report
+Section 9 - Area Group and Partition Summary
+Section 10 - Timing Report
+Section 11 - Configuration String Information
+Section 12 - Control Set Information
+Section 13 - Utilization by Hierarchy
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:PhysDesignRules:372 - Gated clock. Clock net icon_control0<13> is
+   sourced by a combinatorial pin. This is not good design practice. Use the CE
+   pin to control the loading of data into the flip-flop.
+
+Section 3 - Informational
+-------------------------
+INFO:LIT:243 - Logical network icon_control0<10> has no load.
+INFO:LIT:395 - The above info message is repeated 53 more times for the
+   following (max. 5 shown):
+   icon_control0<11>,
+   icon_control0<15>,
+   icon_control0<21>,
+   icon_control0<16>,
+   icon_control0<22>
+   To see the details of these info messages, please use the -detail switch.
+INFO:MapLib:562 - No environment variables are currently set.
+INFO:LIT:244 - All of the single ended outputs in this design are using slew
+   rate limited output drivers. The delay on speed critical single ended outputs
+   can be dramatically reduced by designating them as fast outputs.
+
+Section 4 - Removed Logic Summary
+---------------------------------
+  45 block(s) removed
+  45 block(s) optimized away
+  61 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+Loadless block "U_icon_pro/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[10].U_LUT" (ROM)
+removed.
+Loadless block "U_icon_pro/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[11].U_LUT" (ROM)
+removed.
+Loadless block "U_icon_pro/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[12].U_LUT" (ROM)
+removed.
+Loadless block "U_icon_pro/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[13].U_LUT" (ROM)
+removed.
+Loadless block "U_icon_pro/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[14].U_LUT" (ROM)
+removed.
+Loadless block "U_icon_pro/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[1].U_LUT" (ROM)
+removed.
+Loadless block "U_icon_pro/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[2].U_LUT" (ROM)
+removed.
+Loadless block "U_icon_pro/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[3].U_LUT" (ROM)
+removed.
+Loadless block "U_icon_pro/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[4].U_LUT" (ROM)
+removed.
+Loadless block "U_icon_pro/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[5].U_LUT" (ROM)
+removed.
+Loadless block "U_icon_pro/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[6].U_LUT" (ROM)
+removed.
+Loadless block "U_icon_pro/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[7].U_LUT" (ROM)
+removed.
+Loadless block "U_icon_pro/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[8].U_LUT" (ROM)
+removed.
+Loadless block "U_icon_pro/U0/U_ICON/U_CMD/U_CORE_ID_SEL/I4.FI[9].U_LUT" (ROM)
+removed.
+Loadless block "U_ila_pro_0/U0/I_NO_D.U_ILA/U_STAT/U_DSR" (ROM) removed.
+Loadless block "U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TC/I_STORAGE_QUAL.U_CAP_B"
+(ROM) removed.
+The signal "icon_control0<10>" is sourceless and has been removed.
+The signal "icon_control0<11>" is sourceless and has been removed.
+The signal "icon_control0<15>" is sourceless and has been removed.
+The signal "icon_control0<21>" is sourceless and has been removed.
+The signal "icon_control0<16>" is sourceless and has been removed.
+The signal "icon_control0<22>" is sourceless and has been removed.
+The signal "icon_control0<17>" is sourceless and has been removed.
+The signal "icon_control0<23>" is sourceless and has been removed.
+The signal "icon_control0<18>" is sourceless and has been removed.
+The signal "icon_control0<24>" is sourceless and has been removed.
+The signal "icon_control0<30>" is sourceless and has been removed.
+The signal "icon_control0<25>" is sourceless and has been removed.
+The signal "icon_control0<31>" is sourceless and has been removed.
+The signal "icon_control0<26>" is sourceless and has been removed.
+The signal "icon_control0<32>" is sourceless and has been removed.
+The signal "icon_control0<7>" is sourceless and has been removed.
+The signal "icon_control0<27>" is sourceless and has been removed.
+The signal "icon_control0<33>" is sourceless and has been removed.
+The signal "icon_control0<28>" is sourceless and has been removed.
+The signal "icon_control0<34>" is sourceless and has been removed.
+The signal "icon_control0<29>" is sourceless and has been removed.
+The signal "icon_control0<35>" is sourceless and has been removed.
+The signal "jit_cont/sl_to_mst/frame_buf2/r_data_a<0>" is sourceless and has
+been removed.
+The signal "jit_cont/sl_to_mst/frame_buf2/r_data_a<1>" is sourceless and has
+been removed.
+The signal "jit_cont/sl_to_mst/frame_buf2/r_data_a<2>" is sourceless and has
+been removed.
+The signal "jit_cont/sl_to_mst/frame_buf2/r_data_a<3>" is sourceless and has
+been removed.
+The signal "jit_cont/sl_to_mst/frame_buf2/r_data_a<4>" is sourceless and has
+been removed.
+The signal "jit_cont/sl_to_mst/frame_buf2/r_data_a<5>" is sourceless and has
+been removed.
+The signal "jit_cont/sl_to_mst/frame_buf2/r_data_a<6>" is sourceless and has
+been removed.
+The signal "jit_cont/sl_to_mst/frame_buf2/r_data_a<7>" is sourceless and has
+been removed.
+The signal "jit_cont/sl_to_mst/frame_buf/r_data_a<0>" is sourceless and has been
+removed.
+The signal "jit_cont/sl_to_mst/frame_buf/r_data_a<1>" is sourceless and has been
+removed.
+The signal "jit_cont/sl_to_mst/frame_buf/r_data_a<2>" is sourceless and has been
+removed.
+The signal "jit_cont/sl_to_mst/frame_buf/r_data_a<3>" is sourceless and has been
+removed.
+The signal "jit_cont/sl_to_mst/frame_buf/r_data_a<4>" is sourceless and has been
+removed.
+The signal "jit_cont/sl_to_mst/frame_buf/r_data_a<5>" is sourceless and has been
+removed.
+The signal "jit_cont/sl_to_mst/frame_buf/r_data_a<6>" is sourceless and has been
+removed.
+The signal "jit_cont/sl_to_mst/frame_buf/r_data_a<7>" is sourceless and has been
+removed.
+The signal "jit_cont/mst_to_sl/frame_buf2/r_data_a<0>" is sourceless and has
+been removed.
+The signal "jit_cont/mst_to_sl/frame_buf2/r_data_a<1>" is sourceless and has
+been removed.
+The signal "jit_cont/mst_to_sl/frame_buf2/r_data_a<2>" is sourceless and has
+been removed.
+The signal "jit_cont/mst_to_sl/frame_buf2/r_data_a<3>" is sourceless and has
+been removed.
+The signal "jit_cont/mst_to_sl/frame_buf2/r_data_a<4>" is sourceless and has
+been removed.
+The signal "jit_cont/mst_to_sl/frame_buf2/r_data_a<5>" is sourceless and has
+been removed.
+The signal "jit_cont/mst_to_sl/frame_buf2/r_data_a<6>" is sourceless and has
+been removed.
+The signal "jit_cont/mst_to_sl/frame_buf2/r_data_a<7>" is sourceless and has
+been removed.
+The signal "jit_cont/mst_to_sl/frame_buf/r_data_a<0>" is sourceless and has been
+removed.
+The signal "jit_cont/mst_to_sl/frame_buf/r_data_a<1>" is sourceless and has been
+removed.
+The signal "jit_cont/mst_to_sl/frame_buf/r_data_a<2>" is sourceless and has been
+removed.
+The signal "jit_cont/mst_to_sl/frame_buf/r_data_a<3>" is sourceless and has been
+removed.
+The signal "jit_cont/mst_to_sl/frame_buf/r_data_a<4>" is sourceless and has been
+removed.
+The signal "jit_cont/mst_to_sl/frame_buf/r_data_a<5>" is sourceless and has been
+removed.
+The signal "jit_cont/mst_to_sl/frame_buf/r_data_a<6>" is sourceless and has been
+removed.
+The signal "jit_cont/mst_to_sl/frame_buf/r_data_a<7>" is sourceless and has been
+removed.
+The signal "U_icon_pro/U0/U_ICON/iCOMMAND_SEL<3>" is sourceless and has been
+removed.
+ Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[3].U_HCE" (ROM)
+removed.
+ Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[3].U_LCE" (ROM)
+removed.
+The signal "U_icon_pro/U0/U_ICON/iCOMMAND_SEL<6>" is sourceless and has been
+removed.
+ Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[6].U_HCE" (ROM)
+removed.
+ Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[6].U_LCE" (ROM)
+removed.
+The signal "U_icon_pro/U0/U_ICON/iCOMMAND_SEL<7>" is sourceless and has been
+removed.
+ Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[7].U_HCE" (ROM)
+removed.
+ Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[7].U_LCE" (ROM)
+removed.
+The signal "U_icon_pro/U0/U_ICON/iCOMMAND_SEL<11>" is sourceless and has been
+removed.
+ Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[11].U_HCE"
+(ROM) removed.
+ Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[11].U_LCE"
+(ROM) removed.
+The signal "U_icon_pro/U0/U_ICON/iCOMMAND_SEL<12>" is sourceless and has been
+removed.
+ Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[12].U_HCE"
+(ROM) removed.
+ Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[12].U_LCE"
+(ROM) removed.
+The signal "U_icon_pro/U0/U_ICON/iCOMMAND_SEL<13>" is sourceless and has been
+removed.
+ Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[13].U_HCE"
+(ROM) removed.
+ Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[13].U_LCE"
+(ROM) removed.
+The signal "U_icon_pro/U0/U_ICON/iCOMMAND_SEL<14>" is sourceless and has been
+removed.
+ Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[14].U_HCE"
+(ROM) removed.
+ Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[14].U_LCE"
+(ROM) removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[11].U_LUT" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[12].U_LUT" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[13].U_LUT" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[14].U_LUT" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[3].U_LUT" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[6].U_LUT" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[7].U_LUT" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[10].U_HCE" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[15].U_HCE" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[1].U_HCE" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[2].U_HCE" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[4].U_HCE" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[5].U_HCE" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[8].U_HCE" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[9].U_HCE" (ROM)
+removed.
+
+Optimized Block(s):
+TYPE 		BLOCK
+GND 		U_icon_pro/XST_GND
+VCC 		U_icon_pro/XST_VCC
+LUT4 		U_ila_pro_0/U0/I_NO_D.U_ILA/U_STAT/F_SSTAT[6].I_STAT.U_STAT
+   optimized to 0
+GND 		U_ila_pro_0/XST_GND
+VCC 		U_ila_pro_0/XST_VCC
+GND 		jit_cont/mst_to_sl/Label1/XST_GND
+VCC 		jit_cont/mst_to_sl/Label1/XST_VCC
+GND 		jit_cont/mst_to_sl/XST_GND
+VCC 		jit_cont/mst_to_sl/XST_VCC
+GND 		jit_cont/mst_to_sl/frame_buf/XST_GND
+GND 		jit_cont/mst_to_sl/frame_buf2/XST_GND
+VCC 		jit_cont/mst_to_sl/jitter_timer/XST_VCC
+GND 		jit_cont/mst_to_sl/jitter_timer/counter/XST_GND
+VCC 		jit_cont/mst_to_sl/jitter_timer/counter/XST_VCC
+GND 		jit_cont/mst_to_sl/jitter_timer/reset_counter/XST_GND
+VCC 		jit_cont/mst_to_sl/jitter_timer/reset_counter/XST_VCC
+GND 		jit_cont/mst_to_sl/reciever/XST_GND
+GND 		jit_cont/mst_to_sl/soc_detect_in/XST_GND
+VCC 		jit_cont/mst_to_sl/soc_detect_in/XST_VCC
+GND 		jit_cont/mst_to_sl/soc_detect_out/XST_GND
+VCC 		jit_cont/mst_to_sl/soc_detect_out/XST_VCC
+GND 		jit_cont/mst_to_sl/transmitter/XST_GND
+VCC 		jit_cont/mst_to_sl/transmitter/XST_VCC
+VCC 		jit_cont/mst_to_sl/transmitter/rmii_send_byte/XST_VCC
+GND 		jit_cont/sl_to_mst/Label1/XST_GND
+VCC 		jit_cont/sl_to_mst/Label1/XST_VCC
+GND 		jit_cont/sl_to_mst/XST_GND
+VCC 		jit_cont/sl_to_mst/XST_VCC
+GND 		jit_cont/sl_to_mst/frame_buf/XST_GND
+GND 		jit_cont/sl_to_mst/frame_buf2/XST_GND
+GND 		jit_cont/sl_to_mst/jitter_timer/XST_GND
+VCC 		jit_cont/sl_to_mst/jitter_timer/XST_VCC
+GND 		jit_cont/sl_to_mst/jitter_timer/counter/XST_GND
+VCC 		jit_cont/sl_to_mst/jitter_timer/counter/XST_VCC
+GND 		jit_cont/sl_to_mst/jitter_timer/reset_counter/XST_GND
+VCC 		jit_cont/sl_to_mst/jitter_timer/reset_counter/XST_VCC
+GND 		jit_cont/sl_to_mst/reciever/XST_GND
+GND 		jit_cont/sl_to_mst/soc_detect_in/XST_GND
+VCC 		jit_cont/sl_to_mst/soc_detect_in/XST_VCC
+GND 		jit_cont/sl_to_mst/transmitter/XST_GND
+VCC 		jit_cont/sl_to_mst/transmitter/XST_VCC
+VCC 		jit_cont/sl_to_mst/transmitter/rmii_send_byte/XST_VCC
+
+To enable printing of redundant blocks removed and signals merged, set the
+detailed map report option and rerun map.
+
+Section 6 - IOB Properties
+--------------------------
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| IOB Name                           | Type             | Direction | IO Standard          | Diff  | Drive    | Slew | Reg (s)      | Resistor | IOB      |
+|                                    |                  |           |                      | Term  | Strength | Rate |              |          | Delay    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+| clk_50                             | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| rled                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| rm_clk_mst                         | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| rm_clk_sl                          | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| rm_crs_dv_mst                      | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| rm_crs_dv_sl                       | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| rm_rx_data_mst<0>                  | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| rm_rx_data_mst<1>                  | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| rm_rx_data_sl<0>                   | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| rm_rx_data_sl<1>                   | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| rm_tx_data_mst<0>                  | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| rm_tx_data_mst<1>                  | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| rm_tx_data_sl<0>                   | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| rm_tx_data_sl<1>                   | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| rm_tx_en_mst                       | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| rm_tx_en_sl                        | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| rst                                | IBUF             | INPUT     | LVCMOS25             |       |          |      |              |          | 0 / 0    |
+| soc_in                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| soc_out                            | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
+| tt_soc                             | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          | 0 / 0    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Section 7 - RPMs
+----------------
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_CDONE_MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_CMPRESET_MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_NS0_MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_NS1_MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_SCMPCE_MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_SCRST_MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_WHCMPCE_MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_WLCMPCE_MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL_U_CAP_ADDRGEN_U_SCNT_CMP_I_SRL16.U
+_GAND_SRL16_MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL_U_CAP_ADDRGEN_U_WCNT_HCMP_I_SRL16.
+U_GAND_SRL16_MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL_U_CAP_ADDRGEN_U_WCNT_LCMP_I_SRL16.
+U_GAND_SRL16_MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_
+SRL16.U_GANDX_SRL16_MSET
+
+Section 8 - Guide Report
+------------------------
+Guide not run on this design.
+
+Section 9 - Area Group and Partition Summary
+--------------------------------------------
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+Area Group Information
+----------------------
+
+  No area groups were found in this design.
+
+----------------------
+
+Section 10 - Timing Report
+--------------------------
+This design was not run using timing mode.
+
+Section 11 - Configuration String Details
+-----------------------------------------
+Use the "-detail" map option to print out Configuration Strings
+
+Section 12 - Control Set Information
+------------------------------------
+No control set information for this architecture.
+
+Section 13 - Utilization by Hierarchy
+-------------------------------------
+Use the "-detail" map option to print out the Utilization by Hierarchy section.
