@@ -1,0 +1,4 @@
+bool do_add
+uint16 pid
+---
+bool success

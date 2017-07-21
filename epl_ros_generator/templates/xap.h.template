@@ -1,0 +1,17 @@
+/* Dummy string */
+#ifndef XAP_h
+#define XAP_h
+
+#define DUMMY_1
+typedef struct
+{
+$PI_OUT_FIELDS
+} PI_OUT;
+
+#define DUMMY_2
+typedef struct
+{
+$PI_IN_FIELDS
+} PI_IN;
+
+#endif

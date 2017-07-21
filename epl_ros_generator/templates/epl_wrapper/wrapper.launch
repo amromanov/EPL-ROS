@@ -1,0 +1,4 @@
+<launch>
+  <node name="wrapper" pkg="epl_wrapper" type="wrapper" output="screen" />
+  <node name="epl_node" pkg="epl_wrapper" type="epl_launch.sh" output="screen" />
+</launch>

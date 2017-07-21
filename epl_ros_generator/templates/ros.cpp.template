@@ -1,0 +1,79 @@
+#include <$ROS_PROJECT/generated_wrapper.h>
+
+IPC_DATA<PI_IN> oplk_pi_in_data;
+PI_IN *oplk_pi_in;
+IPC_DATA<PI_OUT> oplk_pi_out_data;
+PI_OUT *oplk_pi_out;
+IPC_DATA<SDO> oplk_sdo_data;
+SDO *oplk_sdo;
+IPC_DATA<WRAPPER_INFO> oplk_wrapper_info_data;
+WRAPPER_INFO *oplk_wrapper_info;
+
+$ROS_STRUCTS
+
+int init_ros_memory(int pid)
+{
+    ROS_INFO("-------------------------");
+    ROS_INFO("Initializing ROS shared memory");
+$INIT_ROS_CODE
+}
+
+int init_oplk_memory()
+{
+    oplk_pi_in_data.shm_name = "OPLK_PI_IN";
+    oplk_pi_in_data.address = init_shared_memory(oplk_pi_in_data.shm_name.c_str(), oplk_pi_in_data.length);
+    if (oplk_pi_in_data.address == (void*)-1)
+    {
+        ROS_ERROR("Accessing OPLK shared memory for %s: FAIL", oplk_pi_in_data.shm_name.c_str());
+        return 1;
+    }
+    else
+    {
+        oplk_pi_in = (PI_IN*)oplk_pi_in_data.address;
+        ROS_INFO("Accessing OPLK shared memory for %s: OK", oplk_pi_in_data.shm_name.c_str());
+    }
+    oplk_pi_out_data.shm_name = "OPLK_PI_OUT";
+    oplk_pi_out_data.address = init_shared_memory(oplk_pi_out_data.shm_name.c_str(), oplk_pi_out_data.length);
+    if (oplk_pi_out_data.address == (void*)-1)
+    {
+        ROS_ERROR("Accessing OPLK shared memory for %s: FAIL", oplk_pi_out_data.shm_name.c_str());
+        return 1;
+    }
+    else
+    {
+        oplk_pi_out = (PI_OUT*)oplk_pi_out_data.address;
+        ROS_INFO("Accessing OPLK shared memory for %s: OK", oplk_pi_out_data.shm_name.c_str());
+    }
+    oplk_sdo_data.shm_name = "OPLK_SDO";
+    oplk_sdo_data.address = init_shared_memory(oplk_sdo_data.shm_name.c_str(), oplk_sdo_data.length);
+    if (oplk_sdo_data.address == (void*)-1)
+    {
+        ROS_ERROR("Accessing OPLK shared memory for %s: FAIL", oplk_sdo_data.shm_name.c_str());
+        return 1;
+    }
+    else
+    {
+        oplk_sdo = (SDO*)oplk_sdo_data.address;
+        ROS_INFO("Accessing OPLK shared memory for %s: OK", oplk_sdo_data.shm_name.c_str());
+    }
+    oplk_wrapper_info_data.shm_name = "OPLK_WRAPPER_INFO";
+    oplk_wrapper_info_data.address = init_shared_memory(oplk_wrapper_info_data.shm_name.c_str(), oplk_wrapper_info_data.length);
+    if (oplk_wrapper_info_data.address == (void*)-1)
+    {
+        ROS_ERROR("Accessing OPLK shared memory for %s: FAIL", oplk_wrapper_info_data.shm_name.c_str());
+        return 1;
+    }
+    else
+    {
+        oplk_wrapper_info = (WRAPPER_INFO*)oplk_wrapper_info_data.address;
+        ROS_INFO("Accessing OPLK shared memory for %s: OK", oplk_wrapper_info_data.shm_name.c_str());
+    }
+    return 0;
+}
+
+void unlink_memory()
+{
+$ROS_UNLINK_CODE
+}
+
+$ROS_EXCHANGE_CODE

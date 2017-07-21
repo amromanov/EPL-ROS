@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!--
+    This file was generated with EPL ROS generator
+    Generated on: $TIMESTAMP
+    License: $LICENSE
+    Version: $VERSION
+-->
+
+<package>
+  <name>epl_wrapper</name>
+  <version>$VERSION</version>
+  <description>EPL ROS wrapper</description>
+
+  <maintainer email="romanov@mirea.ru">Alexey Romanov</maintainer>
+  <license>BSD</license>
+  <url type="repository">https://github.com/amromanov/epl_ros</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>message_generation</build_depend>
+
+  <run_depend>roscpp</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>message_runtime</run_depend>
+</package>

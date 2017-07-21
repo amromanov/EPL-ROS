@@ -1,0 +1,9 @@
+/home/dev/powerlink_new/stack/build/proj/linux/liboplkcn/CMakeFiles/oplkcn.dir
+/home/dev/powerlink_new/stack/build/proj/linux/liboplkcnapp-kernelintf/CMakeFiles/oplkcnapp-kernelintf.dir
+/home/dev/powerlink_new/stack/build/proj/linux/liboplkcnapp-userintf/CMakeFiles/oplkcnapp-userintf.dir
+/home/dev/powerlink_new/stack/build/proj/linux/liboplkcndrv-pcap/CMakeFiles/oplkcndrv-pcap.dir
+/home/dev/powerlink_new/stack/build/proj/linux/liboplkmn/CMakeFiles/oplkmn.dir
+/home/dev/powerlink_new/stack/build/proj/linux/liboplkmnapp-kernelintf/CMakeFiles/oplkmnapp-kernelintf.dir
+/home/dev/powerlink_new/stack/build/proj/linux/liboplkmnapp-kernelpcie/CMakeFiles/oplkmnapp-kernelpcie.dir
+/home/dev/powerlink_new/stack/build/proj/linux/liboplkmnapp-userintf/CMakeFiles/oplkmnapp-userintf.dir
+/home/dev/powerlink_new/stack/build/proj/linux/liboplkmndrv-pcap/CMakeFiles/oplkmndrv-pcap.dir

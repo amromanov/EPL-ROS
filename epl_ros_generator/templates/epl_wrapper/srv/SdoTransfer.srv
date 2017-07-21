@@ -1,0 +1,12 @@
+uint8 action
+uint16 pid
+uint8 node
+uint16 index
+uint16 subindex
+bool write
+uint64 data
+uint16 size
+---
+uint16 error
+uint64 data
+bool is_ready
