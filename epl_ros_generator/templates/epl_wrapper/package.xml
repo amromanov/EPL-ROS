@@ -14,7 +14,7 @@
 
   <maintainer email="romanov@mirea.ru">Alexey Romanov</maintainer>
   <license>BSD</license>
-  <url type="repository">https://github.com/amromanov/epl_ros</url>
+  <url type="repository">https://github.com/amromanov/EPL-ROS</url>
 
   <buildtool_depend>catkin</buildtool_depend>
   <build_depend>roscpp</build_depend>
